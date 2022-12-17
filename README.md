@@ -1,7 +1,7 @@
 ![alt text](https://cdn.discordapp.com/attachments/949290845222350928/964583278789148763/cover.png)
 # XDDOS, an advanced minecraft server stresser
 
-XDDOS is an advanced tool for attacking and testing your server against bots that is made from [MCStorm](https://github.com/llyxa05/MCSTORM-Crack).
+XDDOS is an advanced tool for attacking and testing your server against bots.
 
 ## Features avilable
 
