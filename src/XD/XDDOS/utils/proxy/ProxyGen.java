@@ -1,9 +1,8 @@
 package XD.XDDOS.utils.proxy;
 
+import XD.XDDOS.XDDOS;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-
-import XD.XDDOS.XDDOS;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -19,24 +18,26 @@ import java.util.stream.Collectors;
 
 public class ProxyGen {
 
-    private List<String> proxies = new CopyOnWriteArrayList<>();
-    private File proxyFile;
+    private final File proxyFile;
 
-    public ProxyGen(File proxyFile, String[] args) {
+    public ProxyGen(File proxyFile) {
         System.out.println(XDDOS.GREEN_BOLD+"["+XDDOS.RED_BOLD+"XDDOS"+XDDOS.GREEN_BOLD+"] "+XDDOS.WHITE_BOLD+" Parsing proxy...");
         this.proxyFile = proxyFile;
         File urls = new File("urls.txt");
+        List<String> proxies = new CopyOnWriteArrayList<>();
         if(urls.exists()){
             try {
                 Path p = urls.toPath();
-                Files.readAllLines(p).stream().forEach( (link) -> {
+                List<String> readAllLines = Files.readAllLines(p);
+                for (int i = 0; i < readAllLines.size(); i++) {
+                    String link = readAllLines.get(i);
                     try {
                         Document scrapedproxies = Jsoup.connect(link).get();
                         proxies.addAll(Arrays.stream(scrapedproxies.text().split(" ")).distinct().collect(Collectors.toList()));
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                });
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }

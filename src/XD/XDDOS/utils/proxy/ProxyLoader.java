@@ -1,33 +1,27 @@
 package XD.XDDOS.utils.proxy;
 
+import XD.XDDOS.XDDOS;
+import XD.XDDOS.utils.NettyBootstrap;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.net.InetSocketAddress;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
-
-import XD.XDDOS.XDDOS;
-import XD.XDDOS.utils.NettyBootstrap;
 
 public class ProxyLoader {
    private File file;
    private BufferedReader bufferedReader;
-   public volatile List<ProxyLoader.Proxy> finals = Collections.synchronizedList(new ArrayList<Proxy>());
-   public ExecutorService exe = Executors.newFixedThreadPool(50, new ThreadFactory() {
-      public Thread newThread(Runnable r) {
-         return new Thread(r);
-      }
-   });
-   private volatile int at = 0;
-   public ConcurrentHashMap<ProxyLoader.Proxy, Long> disabledProxies = new ConcurrentHashMap<ProxyLoader.Proxy, Long>(1000);
+   public volatile List<ProxyLoader.Proxy> finals = Collections.synchronizedList(new ArrayList<>());
+   public ExecutorService exe = Executors.newFixedThreadPool(50, Thread::new);
+   private int at = 0;
+   public ConcurrentHashMap<ProxyLoader.Proxy, Long> disabledProxies = new ConcurrentHashMap<>(1000);
 
    public ProxyLoader(File file) {
       if (file != null) {
@@ -44,15 +38,13 @@ public class ProxyLoader {
    private void loadFile() {
       try {
          List<String> lines = Files.readAllLines(this.file.toPath());
-         Iterator<String> var3 = lines.iterator();
 
-         while(var3.hasNext()) {
-            String s = (String)var3.next();
+         for (String s : lines) {
             this.exe.execute(() -> {
                try {
                   String[] split = s.split(":");
-                  this.finals.add(new ProxyLoader.Proxy(new InetSocketAddress(split[0], Integer.parseInt(split[1]))));
-               } catch (Throwable tw) {
+                  this.finals.add(new Proxy(new InetSocketAddress(split[0], Integer.parseInt(split[1]))));
+               } catch (NumberFormatException tw) {
                   tw.getMessage();
                }
 
@@ -107,10 +99,10 @@ public class ProxyLoader {
       }
 
       if (NettyBootstrap.disableFailedProxies) {
-         return (ProxyLoader.Proxy)this.finals.get(get);
+         return this.finals.get(get);
       } else {
-         ProxyLoader.Proxy proxie = (ProxyLoader.Proxy)this.finals.get(get);
-         Long time = (Long)this.disabledProxies.get(proxie);
+         ProxyLoader.Proxy proxie = this.finals.get(get);
+         Long time = this.disabledProxies.get(proxie);
          if (time != null) {
             if (System.currentTimeMillis() > time + 10000L) {
                proxie = this.getProxy();

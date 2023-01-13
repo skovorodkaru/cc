@@ -88,12 +88,14 @@ public class ArgsHelper {
         System.out.print("Time (secons):\n" + XDDOS.GREEN_BOLD + ">> " + XDDOS.WHITE_BOLD);
         XDDOS.duration = Integer.parseInt(in.nextLine());
 
-        System.out.print("Target cps (-1 for max):\n" + XDDOS.GREEN_BOLD + ">> " + XDDOS.WHITE_BOLD);
-        XDDOS.cpuselect = Integer.parseInt(in.nextLine());
+        System.out.print("Enter netty Threads to use:\n" + XDDOS.GREEN_BOLD + ">> " + XDDOS.WHITE_BOLD);
+        XDDOS.nettyThreads = Integer.parseInt(in.nextLine());
+        System.out.print("Enter loop Threads to use:\n" + XDDOS.GREEN_BOLD + ">> " + XDDOS.WHITE_BOLD);
+        XDDOS.loopThreads = Integer.parseInt(in.nextLine());
         in.close();
         System.out.println("\n" + XDDOS.GREEN_BOLD + "[" + XDDOS.RED_BOLD + "XDDOS" + XDDOS.GREEN_BOLD + "]"
                 + XDDOS.WHITE_BOLD + " Starting...\n" + XDDOS.RESET);
-        XDDOS.proxies = (new ProxyGen(new File("proxies.txt"), args)).load();
+        XDDOS.proxies = (new ProxyGen(new File("proxies.txt"))).load();
         XDDOS.run();
     }
 
@@ -103,13 +105,14 @@ public class ArgsHelper {
         XDDOS.protcolID = Integer.parseInt(args[1]);
         XDDOS.methodID = args[2].toLowerCase();
         XDDOS.duration = Integer.parseInt(args[3]);
-        XDDOS.cpuselect = Integer.parseInt(args[4]);
-        if (args.length > 5) {
-            if (args[5].equalsIgnoreCase("y"))
-                XDDOS.proxies = (new ProxyGen(new File("proxies.txt"), args)).load();
-            if (args[5].equalsIgnoreCase("n")) {
-                if (args.length > 6) {
-                    XDDOS.proxyFile = new File(args[6]);
+        XDDOS.nettyThreads = Integer.parseInt(args[4]);
+        XDDOS.loopThreads = Integer.parseInt(args[5]);
+        if (args.length > 6) {
+            if (args[6].equalsIgnoreCase("y"))
+                XDDOS.proxies = (new ProxyGen(new File("proxies.txt"))).load();
+            if (args[6].equalsIgnoreCase("n")) {
+                if (args.length > 7) {
+                    XDDOS.proxyFile = new File(args[7]);
                     XDDOS.proxies = new ProxyLoader(XDDOS.proxyFile);
                 } else {
                     XDDOS.proxyFile = new File("proxies.txt");
