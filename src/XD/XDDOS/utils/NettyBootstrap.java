@@ -7,9 +7,13 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
+import io.netty.channel.epoll.Epoll;
+import io.netty.channel.epoll.EpollEventLoopGroup;
+import io.netty.channel.epoll.EpollSocketChannel;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.proxy.Socks4ProxyHandler;
+import io.netty.incubator.channel.uring.IOUring;
 import io.netty.incubator.channel.uring.IOUringEventLoopGroup;
 import io.netty.incubator.channel.uring.IOUringSocketChannel;
 import io.netty.util.ResourceLeakDetector;
@@ -43,6 +47,7 @@ public class NettyBootstrap {
         nettyThreads = XDDOS.nettyThreads;
         disableFailedProxies = true;
         {
+            
             if (System.getProperty("os.name").toLowerCase().contains("win")) {
                 socketChannel = NioSocketChannel.class;
                 loopGroup = new NioEventLoopGroup(nettyThreads, new ThreadFactory() {
@@ -54,16 +59,10 @@ public class NettyBootstrap {
                     }
                 });
             } else {
-                socketChannel = IOUringSocketChannel.class;
-                loopGroup = new IOUringEventLoopGroup(nettyThreads, new ThreadFactory() {
-                    public Thread newThread(Runnable r) {
-                        Thread t = new Thread(r);
-                        t.setDaemon(true);
-                        t.setPriority(5);
-                        return t;
-                    }
-                });
+                socketChannel = IOUring.isAvailable() ? IOUringSocketChannel.class : EpollSocketChannel.class;
+                loopGroup = IOUring.isAvailable() ? new IOUringEventLoopGroup(nettyThreads): new EpollEventLoopGroup(nettyThreads);
             }
+            System.out.println("USing "+socketChannel.getName());
         }
 
         method = XDDOS.method;
