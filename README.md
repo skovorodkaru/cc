@@ -24,7 +24,7 @@ XDDOS has the following features:
                just put (no. of threads in ur system / 2) netty threads
 **Loop Thread** it request bootstrap to connect to server. 
 If u dont know what to put try 1 or 2
-- Jar is compiled used java 8. That means that you an use java 8 or above to run XDDOS
+- Jar is compiled used java 17. That means that you an use java 17 or above to run XDDOS
 - To get versions protocols go [here](https://wiki.vg/Protocol_version_numbers)
 
 ### Steps to take to run XDDOS:
