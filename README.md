@@ -14,7 +14,6 @@ XDDOS has the following features:
 - Startup commands 
 - Auto ip resolver. That means that you can use the server IP or the domain
 - Ansi Colours supported
-- Inbuilt auto updater
 
 ## How to use XDDOS
 
@@ -43,11 +42,6 @@ If u dont know what to put try 1 or 2
   
  5) Now open your terminal and go to the directory (Trick, you can write in the folder patch `cmd` and the terminal will open in that folder)
  6) Now use one of the commands below for starting
-
-### Update Command:
-```
-java -jar XDDOS.jar -update
-```
 
 ### Startup Command: 
 
