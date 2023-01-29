@@ -36,10 +36,11 @@ If u dont know what to put try 1 or 2
   ```
   https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks4.txt
   https://raw.githubusercontent.com/ShiftyTR/Proxy-List/master/socks4.txt
-  https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks4.txt
+  https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks4.txt (recommended)
   https://raw.githubusercontent.com/jetkai/proxy-list/main/online-proxies/txt/proxies-socks4.txt
+  https://raw.githubusercontent.com/AnAverageBeing/proxies/main/checked-socks4.txt (updated by hand for now so not recommended)
   ```
-  
+
  5) Now open your terminal and go to the directory (Trick, you can write in the folder patch `cmd` and the terminal will open in that folder)
  6) Now use one of the commands below for starting
 
