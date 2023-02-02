@@ -53,19 +53,19 @@ public class XDDOS {
       }
       System.out.println();
       System.out.println();
-      System.out.println(WHITE_BOLD + "██╗  ██╗██████╗ ██████╗  ██████╗ ███████╗\n" +
-            "╚██╗██╔╝██╔══██╗██╔══██╗██╔═══██╗██╔════╝\n" +
-            " ╚███╔╝ ██║  ██║██║  ██║██║   ██║███████╗\n" +
-            " ██╔██╗ ██║  ██║██║  ██║██║   ██║╚════██║\n" +
-            "██╔╝ ██╗██████╔╝██████╔╝╚██████╔╝███████║\n" +
-            "╚═╝  ╚═╝╚═════╝ ╚═════╝  ╚═════╝ ╚══════╝\n v7.2" +
-            "\n" + RED_BOLD +
-            "MADE BY: " + WHITE_BOLD + DISCORD_USERNAME + "\n" + WHITE_BOLD + "> " + PURPLE_BOLD +
-            "DISCORD: " + GREEN_BOLD + "https://dsc.gg/TEAMXD\n" + WHITE_BOLD + "> " + WHITE_BOLD +
-            "GitHub: " + RED_BOLD + "https://github.com/AnAverageBeing/XDDOS\n" + WHITE_BOLD +
-            "Starting XDDOS :-\n" + RESET +
-            "\n" + GREEN_BOLD +
-            "STARTING\n" + RESET);
+      System.out.println(WHITE_BOLD +  "██╗  ██╗██████╗ ██████╗  ██████╗ ███████╗\n" +
+                                       "╚██╗██╔╝██╔══██╗██╔══██╗██╔═══██╗██╔════╝\n" +
+                                       " ╚███╔╝ ██║  ██║██║  ██║██║   ██║███████╗\n" +
+                                       " ██╔██╗ ██║  ██║██║  ██║██║   ██║╚════██║\n" +
+                                       "██╔╝ ██╗██████╔╝██████╔╝╚██████╔╝███████║\n" +
+                                       "╚═╝  ╚═╝╚═════╝ ╚═════╝  ╚═════╝ ╚══════╝\n v7.2" +
+                                       "\n" + RED_BOLD +
+                                       "MADE BY: " + WHITE_BOLD + DISCORD_USERNAME + "\n" + WHITE_BOLD + "> " + PURPLE_BOLD +
+                                       "DISCORD: " + GREEN_BOLD + "https://dsc.gg/TEAMXD\n" + WHITE_BOLD + "> " + WHITE_BOLD +
+                                       "GitHub: " + RED_BOLD + "https://github.com/AnAverageBeing/XDDOS\n" + WHITE_BOLD +
+                                       "Starting XDDOS :-\n" + RESET +
+                                       "\n" + GREEN_BOLD +
+                                       "STARTING\n" + RESET);
 
 
       if(args.length == 1) {
