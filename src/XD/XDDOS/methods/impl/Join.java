@@ -21,7 +21,7 @@ public class Join
   }
 
   public void accept(Channel channel, ProxyLoader.Proxy proxy) {
-    channel.write(Unpooled.buffer().writeBytes(this.bytes));
+    channel.writeAndFlush(Unpooled.buffer().writeBytes(this.bytes));
     channel.writeAndFlush(Unpooled.buffer().writeBytes((new LoginRequest(RandomUtils.randomString(10))).getWrappedPacketC()));
     NettyBootstrap.integer++;
     NettyBootstrap.totalConnections++;
