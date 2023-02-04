@@ -13,9 +13,6 @@ import io.netty.channel.epoll.EpollSocketChannel;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.proxy.Socks4ProxyHandler;
-import io.netty.incubator.channel.uring.IOUring;
-import io.netty.incubator.channel.uring.IOUringEventLoopGroup;
-import io.netty.incubator.channel.uring.IOUringSocketChannel;
 import io.netty.util.ResourceLeakDetector;
 import io.netty.util.concurrent.Future;
 import io.netty.util.concurrent.GenericFutureListener;
@@ -59,10 +56,10 @@ public class NettyBootstrap {
                     }
                 });
             } else {
-                socketChannel = IOUring.isAvailable() ? IOUringSocketChannel.class : EpollSocketChannel.class;
-                loopGroup = IOUring.isAvailable() ? new IOUringEventLoopGroup(nettyThreads): new EpollEventLoopGroup(nettyThreads);
+                socketChannel = EpollSocketChannel.class;
+                loopGroup = new EpollEventLoopGroup(nettyThreads);
             }
-            System.out.println("USing "+socketChannel.getName());
+            System.out.println("Using "+socketChannel.getName());
         }
 
         method = XDDOS.method;
@@ -113,7 +110,7 @@ public class NettyBootstrap {
                 ctx.close();
             }
         };
-        bootstrap = new Bootstrap().channel(socketChannel).group(loopGroup).option(ChannelOption.TCP_NODELAY, true).option(ChannelOption.AUTO_READ, false).handler(handler);
+        bootstrap = new Bootstrap().channel(socketChannel).group(loopGroup).option(ChannelOption.TCP_NODELAY, true).handler(handler);
     }
 
     public static void start() throws Throwable {
