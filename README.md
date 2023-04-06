@@ -6,10 +6,10 @@ XDDOS is an advanced tool for attacking and testing your server against bots.
 
 XDDOS has the following features:
 
-- `54` different attack methods
+- 54 different attack methods
 - Supports all versions 
-- `proxy scraper` (just put the links to scrape proxy from in urls.txt)
-- `user friendly CLI` dont worry about hard to remeber startup commands
+- proxy scraper that gets latest proxies from url before each attack (just put the links to scrape proxy from in urls.txt)
+- user friendly CLI dont worry about hard to remeber startup commands
 - Startup commands 
 - Auto ip resolver. That means that you can use the server IP or the domain
 - Ansi Colours supported
@@ -41,7 +41,7 @@ If u dont know what to put try 1 or 2
   https://raw.githubusercontent.com/jetkai/proxy-list/main/online-proxies/txt/proxies-socks4.txt
   ```
   
- 5) Now open your terminal and go to the directory (Trick, you can write in the folder patch `cmd` and the terminal will open in that folder)
+ 5) Now open your terminal and go to the directory (you can write `cmd` in the folder path of where xddos.jar is and the terminal will open in that folder)
  6) Now use one of the commands below for starting
 
 ### Startup Command: 
