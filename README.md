@@ -31,7 +31,9 @@ If u dont know what to put try 1 or 2
  2) Create a folder to store XDDOS
  3) Now make a file called urls.txt in that folder
  4) Put the links to scrape socks4 proxies from in that file
-   ### If you don't have, here's some socks4 links to scrape
+   #### If you don't have links to scrape proxy from here are some
+   <br>
+  just put these in url.txt and enjoy
   ```
   https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks4.txt
   https://raw.githubusercontent.com/ShiftyTR/Proxy-List/master/socks4.txt
