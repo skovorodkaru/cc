@@ -28,10 +28,10 @@ XDDOS has the following features:
   <li>In that folder, create a text file and name it `urls.txt`.</li>
   <li>Put the links to scrape socks4 proxies from in that file. If you don't have any links, here are some:
     <ol>
-  <li><a href="https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks4.txt" target="_blank">URL 1</a></li>
-  <li><a href="https://raw.githubusercontent.com/ShiftyTR/Proxy-List/master/socks4.txt" target="_blank">URL 2</a></li>
-  <li><a href="https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks4.txt" target="_blank">URL 3</a></li>
-  <li><a href="https://raw.githubusercontent.com/jetkai/proxy-list/main/online-proxies/txt/proxies-socks4.txt" target="_blank">URL 4</a></li>
+  <li><a href="https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks4.txt" target="_blank">TheSpeedX/PROXY-List</a></li>
+  <li><a href="https://raw.githubusercontent.com/ShiftyTR/Proxy-List/master/socks4.txt" target="_blank">ShiftyTR/Proxy-List</a></li>
+  <li><a href="https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks4.txt" target="_blank">monosans/proxy-list</a></li>
+  <li><a href="https://raw.githubusercontent.com/jetkai/proxy-list/main/online-proxies/txt/proxies-socks4.txt" target="_blank">jetkai/proxy-list</a></li>
 </ol>
 
 </li>
