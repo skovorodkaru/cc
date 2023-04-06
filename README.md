@@ -1,53 +1,46 @@
-# XDDOS, an advanced minecraft server stresser
+# XDDOS: An Advanced Minecraft Server Stress Tester
 
-XDDOS is an advanced tool for attacking and testing your server against bots.
+<p>
+XDDOS is a powerful tool that you can use to test your server's resilience against bots. It has many advanced features that make it a must-have for anyone who wants to ensure the stability and performance of their Minecraft server.
+</p>
 
-## Features avilable
-
+## Features
 XDDOS has the following features:
 
-- 54 different attack methods
-- Supports all versions 
-- proxy scraper that gets latest proxies from url before each attack (just put the links to scrape proxy from in urls.txt)
-- user friendly CLI dont worry about hard to remeber startup commands
-- Startup commands 
-- Auto ip resolver. That means that you can use the server IP or the domain
-- Ansi Colours supported
+- 54 different attack methods to choose from
+- Supports all versions of Minecraft
+- A proxy scraper that gets the latest proxies from a URL before each attack (just put the links to scrape proxy from in urls.txt)
+- A user-friendly command-line interface (CLI) that eliminates the need for difficult-to-remember startup commands
+- Startup commands
+- Auto IP resolver, which means that you can use the server IP or domain
+- ANSI color support for better visuals in terminal
 
-## How to use XDDOS
+## System Requirements
 
-### Things to know
+- XDDOS is compiled using Java 17, which means that you can use Java 17 or above to run it.
+- To get versions protocols, go to [this page](https://wiki.vg/Protocol_version_numbers)
 
-- About netty and loop threads
-**NETTY THREDS** those are threds that netty use in its event loop group if u dont know what to put
-               just put (no. of threads in ur system / 2) netty threads
-**Loop Thread** it request bootstrap to connect to server. 
-If u dont know what to put try 1 or 2
-- Jar is compiled used java 17. That means that you an use java 17 or above to run XDDOS
-- To get versions protocols go [here](https://wiki.vg/Protocol_version_numbers)
 
-### Steps to take to run XDDOS:
- 1) Download the jar -> [Download](https://github.com/AnAverageBeing/XDDOS/raw/master/XDDOS.jar)
- 2) Create a folder to store XDDOS
- 3) Now make a file called urls.txt in that folder
- 4) Put the links to scrape socks4 proxies from in that file
-   #### If you don't have links to scrape proxy from here are some
-   <br>
-  just put these in url.txt and enjoy
-  
-  ```
-  https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks4.txt
-  https://raw.githubusercontent.com/ShiftyTR/Proxy-List/master/socks4.txt
-  https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks4.txt
-  https://raw.githubusercontent.com/jetkai/proxy-list/main/online-proxies/txt/proxies-socks4.txt
-  ```
-  
- 5) Now open your terminal and go to the directory (you can write `cmd` in the folder path of where xddos.jar is and the terminal will open in that folder)
- 6) Now use one of the commands below for starting
+## How to run XDDOS
+<ol>
+  <li>Download the XDDOS jar from [here](https://github.com/AnAverageBeing/XDDOS/raw/master/XDDOS.jar).</li>
+  <li>Create a folder to store XDDOS.jar in it.</li>
+  <li>In that folder, create a text file and name it `urls.txt`.</li>
+  <li>Put the links to scrape socks4 proxies from in that file. If you don't have any links, you can use the following ones:
+  </li>
+```
+https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks4.txt
+https://raw.githubusercontent.com/ShiftyTR/Proxy-List/master/socks4.txt
+https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks4.txt
+https://raw.githubusercontent.com/jetkai/proxy-list/main/online-proxies/txt/proxies-socks4.txt
+```
+  <li>To open the terminal, first navigate to the folder where the XDDOS jar file is stored. You can do this by using the cd command in the terminal and specifying the folder path. For example, if the XDDOS jar file is stored in the Downloads folder, you can navigate to it by typing cd Downloads in the terminal. Alternatively, you can open the folder where the XDDOS.jar file is stored in file explorer, and then type cmd in the address bar at the top of the window. This will open a terminal window in that folder.</li>
+  <li>Use one of the commands below to start XDDOS.</li>
+</ol>
 
 ### Startup Command: 
 
-- For user friendly CLI/auto mode with colors:
+- For user-friendly CLI/auto mode with colors:
 ```
 java -jar XDDOS.jar
 ```
