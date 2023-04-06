@@ -27,10 +27,10 @@ XDDOS has the following features:
 3. In that folder, create a text file and name it `urls.txt`.
 4. Put the links to scrape socks4 proxies from in that file. If you don't have any links, here are some:
    ```
-    https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks4.txt
-    https://raw.githubusercontent.com/ShiftyTR/Proxy-List/master/socks4.txt
-    https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks4.txt
-    https://raw.githubusercontent.com/jetkai/proxy-list/main/online-proxies/txt/proxies-socks4.txt
+   https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks4.txt
+   https://raw.githubusercontent.com/ShiftyTR/Proxy-List/master/socks4.txt
+   https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks4.txt
+   https://raw.githubusercontent.com/jetkai/proxy-list/main/online-proxies/txt/proxies-socks4.txt
    ```
 5. To open the terminal, first navigate to the folder where the XDDOS jar file is stored. You can do this by using the `cd` command in the terminal and specifying the folder path. For example, if the XDDOS jar file is stored in the Downloads folder, you can navigate to it by typing `cd Downloads` in the terminal. Alternatively, you can open the folder where the XDDOS.jar file is stored in file explorer, and then type `cmd` in the address bar at the top of the window. This will open a terminal window in that folder.
 6. Use one of the commands below to start XDDOS.
