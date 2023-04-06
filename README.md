@@ -59,7 +59,7 @@ java -jar XDDOS.jar [ip] [protocol] [method] [time] [netty threads] [loop thread
 ```
 
 #### NOTE! :-
-**y/n** is optional. Use `y` if you want to scrape proxy from links in urls.txt and **n** to use your own proxies from proxies.txt 
+**`y/n`** is optional. Use **`y`** if you want to scrape proxy from links in urls.txt and **`n`** to use your own proxies from `proxies.txt` file.
 
 ## Example Attack Commands  
 
