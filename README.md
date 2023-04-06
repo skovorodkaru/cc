@@ -22,6 +22,7 @@ XDDOS has the following features:
 ## System Requirements
 
 - XDDOS is compiled using Java 17, which means that you can use Java 17 or above to run it.
+- If running on linux kernel then it must have must epoll support or XDDOS will crash.
 
 ## How to run XDDOS
 
