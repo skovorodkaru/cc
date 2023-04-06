@@ -38,9 +38,13 @@ XDDOS has the following features:
 5. To open the terminal, first navigate to the folder where the XDDOS jar file is stored. You can do this by using the `cd` command in the terminal and specifying the folder path. For example, if the XDDOS jar file is stored in the Downloads folder, you can navigate to it by typing `cd Downloads` in the terminal. Alternatively, you can open the folder where the XDDOS.jar file is stored in file explorer, and then type `cmd` in the address bar at the top of the window. This will open a terminal window in that folder.
 6. Use one of the commands given [here](https://github.com/AnAverageBeing/XDDOS#startup-command) to start XDDOS.
 
-### Tips
+### Things to know
 
-- to get protocol number see [this page](https://wiki.vg/Protocol_version_numbers)
+- To get protocol number see [this page](https://wiki.vg/Protocol_version_numbers)
+- "Netty threads" are a type of threads that Netty, a networking framework, uses in its "event loop group". This group of threads is responsible for sending request to the server. To determine the optimal number of Netty threads to use, you can simply take the total number of threads available on your system and divide it by two.
+- "loop threads" are used to make as many connection to server as possible. If you're not sure how many loop threads you should use, you can start with one or two and adjust as needed. What i found was value `1` and `2` works the best with mid specs vps.
+
+In summary, Netty threads are used by the Netty framework to handle incoming requests and responses, while loop threads are used to establish a connection to a server. The recommended number of Netty threads is half the total number of threads available on your system, and for loop threads, you can start with one or two and adjust as needed.
 
 ### Startup Command:
 
