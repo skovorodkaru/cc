@@ -152,8 +152,8 @@ java -jar XDDOS.jar localhost:25565 47 botjoiner 10 10 2 y
 
 ### The colours are bugged
 
-Use -noansi at the end of the command or try using another terminal like Windows Terminal
+Use `-noansi` flag at the end of the command or try using another terminal.
 
 ### XDDOS has a discord?
 
-Yes. You can join [here](https://dsc.gg/TEAMXD)
+Yes. You can join [here](https://dsc.gg/TEAMXD).
