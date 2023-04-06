@@ -18,7 +18,6 @@ XDDOS has the following features:
 ## System Requirements
 
 - XDDOS is compiled using Java 17, which means that you can use Java 17 or above to run it.
-- To get versions protocols, go to [this page](https://wiki.vg/Protocol_version_numbers)
 
 ## How to run XDDOS
 
@@ -33,7 +32,10 @@ XDDOS has the following features:
    https://raw.githubusercontent.com/jetkai/proxy-list/main/online-proxies/txt/proxies-socks4.txt
    ```
 5. To open the terminal, first navigate to the folder where the XDDOS jar file is stored. You can do this by using the `cd` command in the terminal and specifying the folder path. For example, if the XDDOS jar file is stored in the Downloads folder, you can navigate to it by typing `cd Downloads` in the terminal. Alternatively, you can open the folder where the XDDOS.jar file is stored in file explorer, and then type `cmd` in the address bar at the top of the window. This will open a terminal window in that folder.
-6. Use one of the commands below to start XDDOS.
+6. Use one of the commands given [here](https://github.com/AnAverageBeing/XDDOS#startup-command) to start XDDOS.
+
+### Tips
+- to get protocol number see [this page](https://wiki.vg/Protocol_version_numbers)
 
 
 ### Startup Command: 
