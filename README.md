@@ -1,10 +1,14 @@
 # XDDOS: An Advanced Minecraft Server Stress Tester
 
 <p>
-XDDOS is a powerful tool that you can use to test your server's resilience against bots. It has many advanced features that make it a must-have for anyone who wants to ensure the stability and performance of their Minecraft server.
+  XDDOS is a powerful tool that you can use to test your server's resilience
+  against bots. It has many advanced features that make it a must-have for
+  anyone who wants to ensure the stability and performance of their Minecraft
+  server.
 </p>
 
 ## Features
+
 XDDOS has the following features:
 
 - 54 different attack methods to choose from.
@@ -35,49 +39,58 @@ XDDOS has the following features:
 6. Use one of the commands given [here](https://github.com/AnAverageBeing/XDDOS#startup-command) to start XDDOS.
 
 ### Tips
+
 - to get protocol number see [this page](https://wiki.vg/Protocol_version_numbers)
 
-
-### Startup Command: 
+### Startup Command:
 
 - For user-friendly CLI/auto mode with colors:
+
 ```
 java -jar XDDOS.jar
 ```
+
 - For user friendly CLI/auto mode without colors:
+
 ```
 java -jar XDDOS.jar -noansi
 ```
 
 - for manual startup with colors:
+
 ```
 java -jar XDDOS.jar [ip] [protocol] [method] [time] [netty threads] [loop threads] [y/n]
 ```
+
 - for manual startup without colors:
+
 ```
 java -jar XDDOS.jar [ip] [protocol] [method] [time] [netty threads] [loop threads] [y/n] -noansi
 ```
 
 #### NOTE! :-
+
 **`y/n`** is optional. Use **`y`** if you want to scrape proxy from links in urls.txt and **`n`** to use your own proxies from `proxies.txt` file.
 
-## Example Attack Commands  
+## Example Attack Commands
 
 - To run botjoiner for 10 seconds with 3 netty threads and 1 loop thread and use auto proxy generator:
+
 ```
 java -jar XDDOS.jar localhost:25565 47 botjoiner 10 3 1 y
 ```
 
 - To run botjoiner for 10 seconds with 3 netty threads and 1 loop thread and use your own proxy:
+
 ```
 java -jar XDDOS.jar localhost:25565 47 botjoiner 10 3 1 n
 ```
 
 - To run botjoiner for 10 seconds with 10 netty threads and 2 loop threads and use auto proxy generator:
+
 ```
 java -jar XDDOS.jar localhost:25565 47 botjoiner 10 10 2 y
 ```
-
 
 ## Methods avilable
 
@@ -135,10 +148,12 @@ java -jar XDDOS.jar localhost:25565 47 botjoiner 10 10 2 y
 - XDJoin
 - XDSpam
 
-
 ## FAQ:
+
 ### The colours are bugged
+
 Use -noansi at the end of the command or try using another terminal like Windows Terminal
 
 ### XDDOS has a discord?
+
 Yes. You can join [here](https://dsc.gg/TEAMXD)
