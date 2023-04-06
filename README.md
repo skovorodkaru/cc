@@ -34,6 +34,7 @@ If u dont know what to put try 1 or 2
    #### If you don't have links to scrape proxy from here are some
    <br>
   just put these in url.txt and enjoy
+  
   ```
   https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks4.txt
   https://raw.githubusercontent.com/ShiftyTR/Proxy-List/master/socks4.txt
