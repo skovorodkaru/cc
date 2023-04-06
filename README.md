@@ -25,7 +25,7 @@ XDDOS has the following features:
 1. Download the XDDOS jar from [here](https://github.com/AnAverageBeing/XDDOS/raw/master/XDDOS.jar).
 2. Create a folder to store XDDOS.jar in it.
 3. In that folder, create a text file and name it `urls.txt`.
-4. Put the links to scrape socks4 proxies from in that file. If you don't have any links, here are some:
+4. Put the links to scrape socks4 proxies from in that file. If you don't have any links, here are some just put these in `url.txt`:
    ```
    https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks4.txt
    https://raw.githubusercontent.com/ShiftyTR/Proxy-List/master/socks4.txt
