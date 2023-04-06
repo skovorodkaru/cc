@@ -41,8 +41,8 @@ XDDOS has the following features:
 ### Things to know
 
 - To get protocol number see [this page](https://wiki.vg/Protocol_version_numbers)
-- "Netty threads" are a type of threads that Netty, a networking framework, uses in its "event loop group". This group of threads is responsible for sending request to the server. To determine the optimal number of Netty threads to use, you can simply take the total number of threads available on your system and divide it by two.
-- "loop threads" are used to make as many connection to server as possible. If you're not sure how many loop threads you should use, you can start with one or two and adjust as needed. What i found was value `1` and `2` works the best with mid specs vps.
+- **"Netty threads"** are a type of threads that *Netty*, a networking framework, uses in its *"event loop group"*. This group of threads is responsible for sending request to the server. To determine the optimal number of Netty threads to use, you can simply take the total number of threads available on your system and divide it by two.
+- **"loop threads"** are used to make as many connection to server as possible. If you're not sure how many loop threads you should use, you can start with one or two and adjust as needed. What i found was value `1` and `2` works the best with mid specs vps.
 
 In summary, Netty threads are used by the Netty framework to handle incoming requests and responses, while loop threads are used to establish a connection to a server. The recommended number of Netty threads is half the total number of threads available on your system, and for loop threads, you can start with one or two and adjust as needed.
 
