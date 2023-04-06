@@ -7,9 +7,9 @@ XDDOS is a powerful tool that you can use to test your server's resilience again
 ## Features
 XDDOS has the following features:
 
-- 54 different attack methods to choose from
-- Supports all versions of Minecraft
-- A proxy scraper that gets the latest proxies from a URL before each attack (just put the links to scrape proxy from in urls.txt)
+- 54 different attack methods to choose from.
+- Supports all versions of Minecraft.
+- A proxy scraper that gets the latest proxies from a URL before each attack (just put the links to scrape proxy from in `urls.txt` file).
 - A user-friendly command-line interface (CLI) that eliminates the need for difficult-to-remember startup commands
 - Startup commands
 - Auto IP resolver, which means that you can use the server IP or domain
