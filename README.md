@@ -27,7 +27,7 @@ XDDOS has the following features:
 3. In that folder, create a text file and name it `urls.txt`.
 4. Put the links to scrape socks4 proxies from in that file. If you don't have any links, here are some:
    ```
-   	https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks4.txt
+    https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks4.txt
     https://raw.githubusercontent.com/ShiftyTR/Proxy-List/master/socks4.txt
     https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks4.txt
     https://raw.githubusercontent.com/jetkai/proxy-list/main/online-proxies/txt/proxies-socks4.txt
