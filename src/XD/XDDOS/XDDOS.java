@@ -30,7 +30,7 @@ public class XDDOS {
    public static String string;
    public static ProxyLoader proxies;
    public static String serverhp;
-   public static final String DISCORD_USERNAME = "CatOnDrugs#1521";
+   public static final String DISCORD_USERNAME = "FatLinuxUser#5841";
    public static boolean attackRunning = false;
 
    public static String RED_BOLD = "\033[1;31m"; // RED
@@ -61,8 +61,8 @@ public class XDDOS {
                                        "╚═╝  ╚═╝╚═════╝ ╚═════╝  ╚═════╝ ╚══════╝\n v7.2" +
                                        "\n" + RED_BOLD +
                                        "MADE BY: " + WHITE_BOLD + DISCORD_USERNAME + "\n" + WHITE_BOLD + "> " + PURPLE_BOLD +
-                                       "DISCORD: " + GREEN_BOLD + "https://dsc.gg/TEAMXD\n" + WHITE_BOLD + "> " + WHITE_BOLD +
-                                       "GitHub: " + RED_BOLD + "https://github.com/AnAverageBeing/XDDOS\n" + WHITE_BOLD +
+                                       "DISCORD: " + GREEN_BOLD + "https://discord.gg/ZZCyuXuC2C\n" + WHITE_BOLD + "> " + WHITE_BOLD +
+                                       "GitHub: " + RED_BOLD + "https://github.com/AnAverageBeing\n" + WHITE_BOLD +
                                        "Starting XDDOS :-\n" + RESET +
                                        "\n" + GREEN_BOLD +
                                        "STARTING\n" + RESET);
