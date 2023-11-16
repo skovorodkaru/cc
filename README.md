@@ -1,5 +1,7 @@
 # XDDOS: An Advanced Minecraft Server Stress Tester
 
+Now Archived i cant give it any time and to make it better i will have to do full recode and if i am gonna do that ever than its not gonna be in java most likely it will be in go or C++ or Rust so use it if u want but its not that good.
+
 <p>
   XDDOS is a powerful tool that you can use to test your server's resilience
   against bots. It has many advanced features that make it a must-have for
